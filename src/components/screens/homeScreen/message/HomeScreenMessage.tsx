@@ -1,4 +1,4 @@
-import { StyleSheet, StyleProp, TextStyle } from "react-native";
+import { StyleSheet } from "react-native";
 import Animated from "react-native-reanimated";
 
 import { strings } from "@/src/constants/strings/strings";
