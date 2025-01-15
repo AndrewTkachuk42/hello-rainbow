@@ -13,7 +13,9 @@ const AnimatedMessageText = ({
   animatedStyle,
   text,
 }: AnimatedMessageTextProps) => (
-  <Animated.Text style={[style, animatedStyle]}>{text}</Animated.Text>
+  <Animated.Text style={[styles.textStyle, style, animatedStyle]}>
+    {text}
+  </Animated.Text>
 );
 
 const HomeScreenMessage = ({ animatedStyle }: HomeScreenMessageProps) => (
@@ -34,6 +36,9 @@ const HomeScreenMessage = ({ animatedStyle }: HomeScreenMessageProps) => (
 export default HomeScreenMessage;
 
 const styles = StyleSheet.create({
+  textStyle: {
+    textAlign: "center",
+  },
   title: {
     fontSize: TITLE_FONT_SIZE,
   },
