@@ -7,7 +7,7 @@ import {
 } from "react-native-reanimated";
 
 import { ColorsConfig } from "@/src/constants/colors/colors";
-import { formatHSLColor } from "@/src/constants/utils/colors";
+import { formatHSLColor } from "@/src/utils/colors";
 
 const {
   BASE_HUE,
