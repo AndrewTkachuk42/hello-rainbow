@@ -6,8 +6,8 @@ import {
   useAnimatedStyle,
 } from "react-native-reanimated";
 
-import { ColorsConfig } from "@/src/constants/colors/colors";
 import { formatHSLColor } from "@/src/utils/colors";
+import { UseHomeScreenConstants } from "./constants";
 
 const {
   BASE_HUE,
@@ -18,7 +18,7 @@ const {
   TEXT_SATURATION,
   TEXT_LIGHTNESS,
   ANIMATION_DURATION,
-} = ColorsConfig;
+} = UseHomeScreenConstants;
 
 export const useHomeScreen = () => {
   const hue = useSharedValue(BASE_HUE);
@@ -42,7 +42,7 @@ export const useHomeScreen = () => {
 
   const textStyle = useAnimatedStyle(() => ({
     color: formatHSLColor(
-      hue.value + TEXT_HUE_OFFSET,
+      hue.value + TEXT_HUE_OFFSET, // Text color has a different hue than background color. But it follows the analogous color palette scheme, so it always looks nice.
       TEXT_SATURATION,
       TEXT_LIGHTNESS
     ),
