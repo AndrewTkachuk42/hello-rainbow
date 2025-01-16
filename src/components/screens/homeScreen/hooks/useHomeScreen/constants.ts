@@ -7,7 +7,7 @@ const TEXT_SATURATION = 70;
 const TEXT_LIGHTNESS = 20;
 const ANIMATION_DURATION = 700;
 
-export const ColorsConfig = {
+export const UseHomeScreenConstants = {
   BASE_HUE,
   HUE_STEP,
   TEXT_HUE_OFFSET,

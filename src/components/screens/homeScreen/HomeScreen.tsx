@@ -1,6 +1,6 @@
 import HomeScreenMessage from "./message/HomeScreenMessage";
-import { useHomeScreen } from "./useHomeScreen";
 import HomeScreenWrapper from "./wrapper/HomeScreenWrapper";
+import { useHomeScreen } from "./hooks/useHomeScreen/useHomeScreen";
 
 const HomeScreen = () => {
   const { backgroundStyle, textStyle, changeBackgroundColor } = useHomeScreen();
