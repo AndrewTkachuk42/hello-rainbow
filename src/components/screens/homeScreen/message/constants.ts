@@ -9,10 +9,8 @@ const FADE_IN_DELAY = 700;
 const FADE_IN_ANIMATION =
   FadeIn.duration(FADE_IN_DURATION).delay(FADE_IN_DELAY);
 
-const HomeScreenMessageConstants = {
+export const HomeScreenMessageConstants = {
   TITLE_FONT_SIZE,
   MESSAGE_FONT_SIZE,
   FADE_IN_ANIMATION,
 };
-
-export default HomeScreenMessageConstants;
