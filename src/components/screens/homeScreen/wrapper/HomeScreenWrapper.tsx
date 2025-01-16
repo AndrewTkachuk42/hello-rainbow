@@ -1,7 +1,7 @@
 import Animated from "react-native-reanimated";
 import { StyleSheet, Pressable } from "react-native";
 
-import HomeScreenConstants from "../constants";
+import HomeScreenConstants from "./constants";
 import { HomeScreenWrapperProps } from "./types";
 
 const { FADE_IN_ANIMATION } = HomeScreenConstants;
