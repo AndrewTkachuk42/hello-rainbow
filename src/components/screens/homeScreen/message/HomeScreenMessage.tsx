@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
 import Animated from "react-native-reanimated";
 
-import { strings } from "@/src/constants/strings/strings";
 import HomeScreenMessageConstants from "./constants";
+import { strings } from "@/src/constants/strings/strings";
 import { HomeScreenMessageProps, AnimatedMessageTextProps } from "./types";
 
 const { FADE_IN_ANIMATION, TITLE_FONT_SIZE, MESSAGE_FONT_SIZE } =
@@ -13,13 +13,11 @@ const AnimatedMessageText = ({
   animatedStyle,
   text,
 }: AnimatedMessageTextProps) => (
-  <Animated.Text style={[styles.textStyle, style, animatedStyle]}>
-    {text}
-  </Animated.Text>
+  <Animated.Text style={[style, animatedStyle]}>{text}</Animated.Text>
 );
 
 const HomeScreenMessage = ({ animatedStyle }: HomeScreenMessageProps) => (
-  <Animated.View entering={FADE_IN_ANIMATION}>
+  <Animated.View style={styles.container} entering={FADE_IN_ANIMATION}>
     <AnimatedMessageText
       style={styles.title}
       animatedStyle={animatedStyle}
@@ -36,8 +34,8 @@ const HomeScreenMessage = ({ animatedStyle }: HomeScreenMessageProps) => (
 export default HomeScreenMessage;
 
 const styles = StyleSheet.create({
-  textStyle: {
-    textAlign: "center",
+  container: {
+    alignItems: "center",
   },
   title: {
     fontSize: TITLE_FONT_SIZE,
