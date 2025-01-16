@@ -1,10 +1,10 @@
 import Animated from "react-native-reanimated";
 import { StyleSheet, Pressable } from "react-native";
 
-import HomeScreenConstants from "./constants";
+import { HomeScreenWrapperConstants } from "./constants";
 import { HomeScreenWrapperProps } from "./types";
 
-const { FADE_IN_ANIMATION } = HomeScreenConstants;
+const { FADE_IN_ANIMATION } = HomeScreenWrapperConstants;
 
 const HomeScreenWrapper = ({
   children,

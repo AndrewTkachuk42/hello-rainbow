@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
 import Animated from "react-native-reanimated";
 
-import HomeScreenMessageConstants from "./constants";
 import { strings } from "@/src/constants/strings/strings";
+import { HomeScreenMessageConstants } from "./constants";
 import { HomeScreenMessageProps, AnimatedMessageTextProps } from "./types";
 
 const { FADE_IN_ANIMATION, TITLE_FONT_SIZE, MESSAGE_FONT_SIZE } =
