@@ -17,7 +17,7 @@ export const useHomeScreenWrapper = () => {
   const hue = useSharedValue(BASE_HUE);
 
   const changeBackgroundColor = useCallback(() => {
-    const { duration, newHue } = prepareAnimationOptions(hue.value);
+    const { newHue, duration } = prepareAnimationOptions(hue.value);
 
     hue.value = withTiming(newHue, {
       duration,
