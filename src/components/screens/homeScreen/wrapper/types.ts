@@ -1,8 +1,3 @@
-import { StyleProp, ViewStyle } from "react-native";
-import Animated, { AnimatedStyle } from "react-native-reanimated";
+import { PropsWithChildren } from "react";
 
-export type HomeScreenWrapperProps = {
-  children: React.ReactNode;
-  animatedStyle: StyleProp<AnimatedStyle<StyleProp<ViewStyle>>>;
-  onPress: () => void;
-};
+export type HomeScreenWrapperProps = PropsWithChildren;
