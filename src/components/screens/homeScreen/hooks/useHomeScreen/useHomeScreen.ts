@@ -8,26 +8,19 @@ import {
 
 import { formatHSLColor } from "@/src/utils/colors";
 import { UseHomeScreenConstants } from "./constants";
+import { prepareAnimationOptions } from "./utils";
 
-const {
-  BASE_HUE,
-  HUE_STEP,
-  BACKGROUND_SATURATION,
-  BACKGROUND_LIGHTNESS,
-  TEXT_HUE_OFFSET,
-  TEXT_SATURATION,
-  TEXT_LIGHTNESS,
-  ANIMATION_DURATION,
-} = UseHomeScreenConstants;
+const { BASE_HUE, BACKGROUND_SATURATION, BACKGROUND_LIGHTNESS } =
+  UseHomeScreenConstants;
 
-export const useHomeScreen = () => {
+export const useHomeScreenWrapper = () => {
   const hue = useSharedValue(BASE_HUE);
 
   const changeBackgroundColor = useCallback(() => {
-    const newHue = hue.value + HUE_STEP;
+    const { duration, newHue } = prepareAnimationOptions(hue.value);
 
     hue.value = withTiming(newHue, {
-      duration: ANIMATION_DURATION,
+      duration,
       easing: Easing.inOut(Easing.quad),
     });
   }, [hue]);
@@ -40,17 +33,8 @@ export const useHomeScreen = () => {
     ),
   }));
 
-  const textStyle = useAnimatedStyle(() => ({
-    color: formatHSLColor(
-      hue.value + TEXT_HUE_OFFSET, // Text color has a different hue than background color. But it follows the analogous color palette scheme, so it always looks nice.
-      TEXT_SATURATION,
-      TEXT_LIGHTNESS
-    ),
-  }));
-
   return {
     changeBackgroundColor,
     backgroundStyle,
-    textStyle,
   };
 };
